@@ -2,7 +2,7 @@
 version: 2.1
 
 import:
-  - .circleci/jobs.yml
+  - ./jobs.yml
 
 workflows:
   version: 2
@@ -18,5 +18,3 @@ workflows:
       - deploy_application:
           requires:
             - run_tests
-
-# CCIPAT_4LDDFW2P5cT7xnRv1obvjN_8b65e11115ff90b905335fa5e72836625f101a68
