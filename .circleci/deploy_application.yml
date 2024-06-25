@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  deploy_application:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Deploy Application
+          command: npm run deploy

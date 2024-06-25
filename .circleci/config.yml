@@ -1,8 +1,10 @@
-# .circleci/config.yml
 version: 2.1
 
 import:
-  - ./jobs.yml
+  - jobs/install_dependencies.yml
+  - jobs/build_application.yml
+  - jobs/run_tests.yml
+  - jobs/deploy_application.yml
 
 workflows:
   version: 2
