@@ -1,0 +1,39 @@
+# .circleci/jobs.yml
+version: 2.1
+
+jobs:
+  install_dependencies:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+
+  build_application:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Build Application
+          command: npm run build
+
+  run_tests:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Run Tests
+          command: npm test
+
+  deploy_application:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - checkout
+      - run:
+          name: Deploy Application
+          command: npm run deploy
